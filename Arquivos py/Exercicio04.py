@@ -1,0 +1,8 @@
+i = input("Digite algo: ")
+print("Está no formato ASCII?", i.isascii())
+print("São apenas letras?", i.isalpha())
+print("É um número?", i.isnumeric())
+print("Contém letras ou números?", i.isalnum())
+print("É apenas um espaço?", i.isspace())
+print("Todas as letras são minusculas?", i.islower())
+print("Todas as letras são maiusculas?", i.isupper())

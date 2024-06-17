@@ -1,0 +1,5 @@
+nome = str(input("Digite o seu nome: ")).strip()
+nomer = nome.replace(' ', '')
+print(f"A letra A aparece {nomer.lower().count('a')} vezes no seu nome")
+print(f"Ele aparece pela primeira vez na posição {nomer.lower().find('a') + 1 }")
+print(f"E a ultima vez que ele aparece é na posição {nomer.lower().rfind('a') + 1}")
