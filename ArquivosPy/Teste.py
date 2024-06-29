@@ -1,12 +1,15 @@
-#ListaGeral = [['Pedro',[9.5, 5.2]], ['Kelvin', [6.2, 5.0]], ['MatGx'[10.0, 5.0]]]
-#ListaGeral = [[9.5, 5.2]]
-ListaGeral = []
-placeholder = []
-for c in range(0, 2):
-    placeholder.clear()
-    NomeDigitado = [str(input('Nome do aluno: ')).strip().capitalize()]
-    ListaGeral.append(NomeDigitado[:])
-    print(ListaGeral)
-    Notas = [float(input(f'Digite a 1ª nota: ')), float(input(f'Digite a 1ª nota: '))]
-    ListaGeral.insert(c+1, Notas[:])
-    print(ListaGeral)
+while True:
+    resposta = str(input('Quer continuar [s/n]? '))
+    if resposta in 'sn':
+        break
+    print(f'ERRO! respostas aceitas: [s/n]')
+        
+        
+        
+resposta = ''
+if resposta not in 'sn':
+    while resposta not in 'sn':
+        resposta = str(input('Quer continuar [s/n]? '))
+    print(f'ERRO! respostas aceitas: [s/n]')
+
+        

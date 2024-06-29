@@ -5,18 +5,24 @@ SomaTotal = 0
 
 print('-=-'*19)    
 while True:
-    resposta = ''
     DadosDaPessoa = {}
     DadosDaPessoa['Nome'] = str(input('Digite o nome: ')).strip()
-    DadosDaPessoa['Genero'] = str(input('Digite o seu gênero [m/f]: ')).strip().lower()[0]  
+    while True:
+        DadosDaPessoa['Genero'] = str(input('Digite o seu gênero [m/f]: ')).strip().lower()[0]
+        if DadosDaPessoa['Genero'] in 'mf':
+            break
+        print('Resposta Inválida. Tente novamente...')
     DadosDaPessoa['Idade'] = int(input('Digite a idade: '))
     if DadosDaPessoa['Genero'] == 'f':
         ListaDasMulheres.append(DadosDaPessoa.copy()['Nome'])
     SomaTotal += DadosDaPessoa['Idade']
+    
     ListaGeral.append(DadosDaPessoa.copy())
-    if resposta not in ('s', 'n'):
-        while resposta not in ('s', 'n'):
-            resposta = str(input('Quer continuar [s/n]? '))
+    while True:
+        resposta = str(input('Quer continuar [s/n]? ')).strip().lower()[0]
+        if resposta in 'sn':
+            break
+        print(f'ERRO! respostas aceitas: [s/n]')
     print('-=-'*19)    
     if resposta == 'n':
         break
