@@ -2,7 +2,7 @@ from random import randint
 numeros = []
 def sorteia():
     for cont in range(0, 5):
-        numeros.append(randint(1,9))
+        numeros.append(randint(1,10))
     print(numeros)
 def SomaPar(num):
     somavalorespares = 0
