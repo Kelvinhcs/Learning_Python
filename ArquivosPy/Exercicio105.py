@@ -1,30 +1,31 @@
 def notas(*nota, situacao=False):
     """
-    --> Pega as notas que forem colocadas na funcao e separa em um dicionário o total de notas, a maior nota, a menor nota, a media e a situação do aluno
+    --> Pega as notas que forem colocadas na funcao (Pode Receber várias notas) e separa em um dicionário o total de notas, a maior nota, a menor nota, a media e a situação do aluno.
     :param nota: Todas as notas dadas na chamada da função
-    :param situação=: por padrao ela é false, utilize situacao=True para adicionar no dicionario o modo situacao
+    :param situacao(opcional): por padrao ela é false, utilize situacao=True para adicionar no dicionario o modo situacao
     :return: dicionario com as informaçoes separadas
     """
-    mydict= {}
+    DictPlacholder = {}
     for qtd, notaunica in enumerate(nota):
         if qtd == 0 or notaunica > maiornota:
             maiornota = notaunica
         if qtd == 0 or notaunica < menornota:
             menornota = notaunica
-    media = sum(nota) / c
-    mydict['Total'] = len(nota)
-    mydict['Maior Nota'] = maiornota
-    mydict['Menor Nota'] = menornota
-    mydict['Média'] = f'{media:.2f}'
+    #Neste caso acabei utilizando a opção de separar os número em um loop 1 por 1, mas o python suporta os métodos "max()" e "min()" para pegar respectivamente os maiores e menores números do parametro "nota"
+    media = sum(nota) / len(nota)
+    DictPlacholder['Total'] = len(nota)
+    DictPlacholder['Maior Nota'] = maiornota
+    DictPlacholder['Menor Nota'] = menornota
+    DictPlacholder['Média'] = f'{media:.2f}'
     if situacao == True:
         if media >= 7:
-            mydict['Situação'] = 'Passou'
+            DictPlacholder['Situação'] = 'Passou'
         if media < 7 and media > 3:
-            mydict['Situação'] = 'Pode Recuperar'
+            DictPlacholder['Situação'] = 'Pode Recuperar'
         if media < 3:
-            mydict['Situação'] = 'Reprovado'
-    return mydict
+            DictPlacholder['Situação'] = 'Reprovado'
+    return DictPlacholder
     
     
-resp = notas(2.2, 1.6, situacao=True)
-print(resp)
+print(notas(2.2, 1.6, 5.9, situacao=True))
+help(notas)
