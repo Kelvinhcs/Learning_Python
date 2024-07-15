@@ -1,32 +1,37 @@
-def metade(x, form=False):
+def metade(x=0, form=False):
     y = x/2
     if form == True:
         return f'R${y:.2f}'
     else:
         return y
-def dobro(x, form=False):
+    
+def dobro(x=0, form=False):
     y = x*2
     if form == True:
         return f'R${y:.2f}'
     else:
         return y
-def aumentar(Digitado, Valor, form=False):
+    
+def aumentar(Digitado=0, Valor=0, form=False):
     porcentagem = (Digitado*Valor)/100
     total = porcentagem + Digitado
     if form == True:
         return f'R${total:.2f}'
     else:
         return total
-def diminuir(Digitado, Valor, form=False):
+    
+def diminuir(Digitado=0, Valor=0, form=False):
     porcentagem = (Digitado*Valor)/100
     total = Digitado - porcentagem
     if form == True:
         return f'R${total:.2f}'
     else:
         return total
+    
 def moeda(x):
     return f'R${x:.2f}'
-def resumo(Digitado,Aumento,Reducao):
+
+def resumo(Digitado=0,Aumento=0,Reducao=0):
     print(f"""-----------------------------------------
 {'Resumo Do Valor':^40}
 -----------------------------------------
@@ -37,10 +42,3 @@ Metade do preço:{metade(Digitado, form=True):>15}
 {Reducao}% de redução:{diminuir(Digitado, Reducao, form=True):>16}
 -----------------------------------------
 """)
-    
-    
-    
-    
-    
-    
-    
