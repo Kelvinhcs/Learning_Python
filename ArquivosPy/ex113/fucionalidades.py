@@ -26,8 +26,3 @@ def LeiaFloat(msg):
             print('\033[0;31mERRO! Tente digitar o número novamente...\033[m')
         else:
             return n
-        
-        
-Inteiro = LeiaInt('Digite um número inteiro: ')
-Flutuante = LeiaFloat('Digite um número com casa decimal: ')
-print(f'O número inteiro digitado foi {Inteiro} e o decimal foi {Flutuante} .')
