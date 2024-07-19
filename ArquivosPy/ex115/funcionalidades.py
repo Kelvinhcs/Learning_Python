@@ -2,18 +2,23 @@ from json import load,dump
 placeholder = []
 def saida(DadosLocais, NomeDoDataBase):
     print('\033[0;31mO Usuário decidiu encerrar o programa...\033[m')
+    print(f'{' Encerramento ':*^60}')
     try:
-        escolha = int(input('[1] Salvar a sesão atual na DataBase\n[2] Ignorar a sessão atual\nDeseja salvar os dados cadastrados nesta sessão?: '))
+        escolha = int(input('[1] Enviar os dados salvos localmente para a DataBase\n[2] Ignorar a sessão atual\nQual sua escolha?: '))
     except KeyboardInterrupt:
         escolha = 2
     except:
         erro()
     if escolha == 1:
+        DadosLocais.append(placeholder[-1])
         Salvar(DadosLocais, NomeDoDataBase)
+        print('\033[0;31mEncerando...\033[m')
+        print(f'{' Encerramento ':*^60}')
         exit()
     elif escolha == 2:
         print('\033[0;31mDesconsiderando sessão atual.\033[m')
         print('\033[0;31mEncerando...\033[m')
+        print(f'{' Encerramento ':*^60}')
         exit()
 
 
@@ -50,20 +55,20 @@ def CadastrarNovoUsuario(DadosLocais, NomeDoArquivo):
                 erro()
             else:
                 break
-        print(f'{' Ultimos Dados Digitados ':=^60}')
+        print(f'{' Ultimos Dados Digitados ':~^60}')
         UltimosDigitados = {'nome':nome, 'idade':idade}
         placeholder.append(UltimosDigitados)
         print()
         for indice, item in enumerate(placeholder):
-            if indice == len(placeholder)-1: #se for o ultimo 
-                print(f'{'\033[0;31mDado ainda não cadastrado\033[m':^70}')
-            else: #se nao for o ultimo 
-                print(f'{'\033[0;31mDado Cadastrado\033[m':^70}')
+            if indice == len(placeholder)-1:
+                print(f'{'\033[0;31mDados ainda não salvos localmente\033[m':^70}')
+            else:
+                print(f'{'\033[0;32mDado Cadastrado Localmente\033[m':^70}')
             print(f'{f'Nome: {item['nome']}':^60}')
             print(f'{f'Idade: {item['idade']}':^60}')
             print()
-        print('='*60)
-        print('[1] Manter Dados Atuais\n[2] Reescrever Ultimo Registro')
+        print('~'*60)
+        print('[1] Salvar Dado Localmente\n[2] Reescrever Ultimo Registro')
         while True:
             try:
                 escolha = int(input('Qual sua escolha?: '))
@@ -77,12 +82,10 @@ def CadastrarNovoUsuario(DadosLocais, NomeDoArquivo):
                 else:
                     continue
         if escolha == 1:
-            print('='*60)
             for item in placeholder:
                 DadosLocais.append(item)
             break
         if escolha == 2:
-            print('='*60)
             UltimosDigitados.clear()
             placeholder.pop()
             continue
