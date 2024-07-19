@@ -19,8 +19,6 @@ while True:
         else:
             if escolha in (1,2,3):
                 break
-            else:
-                continue
     if escolha == 1:
         print(f'{' Cadastramento ':~^60}')
         funcionalidades.CadastrarNovoUsuario(DadosLocais, NomeDoArquivo)
