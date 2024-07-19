@@ -1,0 +1,4 @@
+Basicamente esse foi o último exercicio do mundo 3 de python do guanabara, nesse exercicio ele pediu para que fosse criado um programa modular onde os dados fossem armazenados em um arquivo.
+Ele nao explicou durante o curso nada sobre gravação de dados em arquivos, muito menos sobre json, então tive que ir atrás sobre como isso funcionava e sinceramente foi a parte mais fácil, esse programa me deu mais trabalho na parte de prevenção de problemas.
+Meus ultimos 3 dias inteiros foram dedicados a este exercicio, para quem passava menos de 2 horas fazendo cada um isso foi um passo muito grande pra minha evolução sobre como desenvolver um projeto e me ajudou bastante a pegar o jeito com a criação de funções e modularização, Acredito ser o mais robusto/complexo que eu fiz até hoje em python. 
+Ainda vejo que ele pode ter algumas melhorias mas estou bem satisfeito com o resultado até então
