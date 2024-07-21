@@ -1,3 +1,19 @@
-testando = [{"nome": "Kelvin","idade": 20},{"nome": "Fulano","idade": 55}, {"nome": "ciclano","idade": 9}]
-testando.pop()
-print(testando)
+import timeit
+
+nome = "Alice"
+idade = 30
+
+# Usando %s
+def usando_percent():
+    return "Nome: %s, Idade: %d" % (nome, idade)
+
+# Usando f-string
+def usando_fstring():
+    return f"Nome: {nome}, Idade: {idade}"
+
+# Medindo o desempenho
+percent_time = timeit.timeit(usando_percent, number=1000000)
+fstring_time = timeit.timeit(usando_fstring, number=1000000)
+
+print(f"Tempo usando %s: {percent_time}")
+print(f"Tempo usando f-string: {fstring_time}")
